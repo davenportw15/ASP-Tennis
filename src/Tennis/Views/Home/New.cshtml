@@ -1,0 +1,35 @@
+﻿@model Tennis.ViewModels.ReservationVM
+
+@{ ViewBag.Title = "New Reservation"; }
+
+<h1>New Reservation</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p>@ViewBag.ErrorMessage</p>
+}
+<form asp-controller="Home" asp-action="New" method="post" class="form-group-lg">
+    <div asp-validation-summary="ModelOnly"></div>
+    <fieldset class="form-group-lg">
+        <label for="reserver">Name</label>
+        <input asp-for="Reserver" id="reserver" />
+        <br />
+        <span asp-validation-for="Reserver"></span>
+    </fieldset>
+    <br />
+    <fieldset class="form-group-lg">
+        <label for="start">Start</label>
+        <input asp-for="Start" id="start" />
+        <br />
+        <span asp-validation-for="Start"></span>
+    </fieldset>
+    <br />
+    <fieldset class="form-group-lg">
+        <label for="reserver">End</label>
+        <input asp-for="End" id="end" />
+        <br />
+        <span asp-validation-for="End"></span>
+    </fieldset>
+    <br />
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

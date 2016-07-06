@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Tennis.Models.Reservation>
-@{ ViewBag.Title = "Today's Reservations"; }
+@{ ViewBag.Title = "All Reservations"; }
 
-<h1>Today's Reservations</h1>
+<h1>All Reservations</h1>
 <br />
 <table class="table table-striped table-hover">
     <thead>
@@ -16,8 +16,8 @@
         {
             <tr>
                 <td>@reservation.Reserver</td>
-                <td>@reservation.Start.ToString("hh:mm tt")</td>
-                <td>@reservation.End.ToString("hh:mm tt")</td>
+                <td>@reservation.Start.ToString("dddd, MMMM dd, hh:mm tt")</td>
+                <td>@reservation.End.ToString("dddd, MMMM dd, hh:mm tt")</td>
             </tr>
         }
     </tbody>
